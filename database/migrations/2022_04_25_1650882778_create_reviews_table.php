@@ -10,10 +10,10 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
 
-		$table->integer('review_id',11);
-		$table->string('review_comments',500);
-		$table->tinyInteger('review_score');
-		$table->string('reply',500);
+		$table->id();
+		$table->text('review_comments');
+		$table->boolean('review_score');
+		$table->text('reply');
         $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 		$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
 

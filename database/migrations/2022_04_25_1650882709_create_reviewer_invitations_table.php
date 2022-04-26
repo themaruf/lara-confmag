@@ -10,8 +10,8 @@ class CreateReviewerInvitationsTable extends Migration
     {
         Schema::create('reviewer_invitations', function (Blueprint $table) {
 
-		$table->bigInteger('reviewer_invitation_id',20);
-		$table->string('email',30);
+		$table->id();
+		$table->string('email');
         $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 		$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
 

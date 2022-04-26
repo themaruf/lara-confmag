@@ -10,14 +10,13 @@ class CreateReviewHistoryTable extends Migration
     {
         Schema::create('review_history', function (Blueprint $table) {
 
-		$table->integer('review_history_id',11);
+		$table->id();
 		$table->integer('paper_id');
 		$table->integer('reviewer_id');
 		$table->integer('review_id');
-		$table->datetime('timestamp');
+		// $table->datetime('timestamp');
         $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 		$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-
         });
     }
 

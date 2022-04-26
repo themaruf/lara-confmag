@@ -10,14 +10,12 @@ class CreatePaperFilesTable extends Migration
     {
         Schema::create('paper_files', function (Blueprint $table) {
 
-		$table->integer('paper_file_id',11);
+		$table->id();
 		$table->integer('paper_id');
-		$table->string('file_name',30);
+		$table->string('file_name');
 		$table->timestamp('upload_time')->default(DB::raw('CURRENT_TIMESTAMP'));
         $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 		$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-
-
         });
     }
 

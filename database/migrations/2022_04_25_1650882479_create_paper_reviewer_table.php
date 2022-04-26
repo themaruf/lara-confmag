@@ -10,7 +10,7 @@ class CreatePaperReviewerTable extends Migration
     {
         Schema::create('paper_reviewer', function (Blueprint $table) {
 
-		$table->integer('paper_reviewer_id',11);
+		$table->id();
 		$table->integer('reviewer_id');
 		$table->integer('paper_id');
         $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

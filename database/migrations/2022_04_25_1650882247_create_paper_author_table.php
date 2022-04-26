@@ -10,7 +10,7 @@ class CreatePaperAuthorTable extends Migration
     {
         Schema::create('paper_author', function (Blueprint $table) {
 
-		$table->integer('paper_author_id',11);
+		$table->id();
 		$table->integer('author_id');
 		$table->integer('paper_id');
 		$table->string('co_author_name0',30)->nullable();
